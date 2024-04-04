@@ -24,7 +24,7 @@ export default function TabelaHospede(props) {
     <body id="corpo" className="colorwhite">
       <Container className="border corpoTabela PessoaEscp">
         <h1 className="text-center TituloTabela">
-          Tabela de Cadastro de Hospede <PiNotePencil />{" "}
+          Tabela de Cadastro de Cadidatos <PiNotePencil />{" "}
         </h1>
 
         <Row className="d-flex justify-content-end md-2">

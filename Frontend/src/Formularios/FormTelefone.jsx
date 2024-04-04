@@ -172,7 +172,7 @@ export default function FormTelefone(props) {
 
             <Col>
               <Form.Group className="mb-3" controlId="titulo">
-                <Form.Label>Selecione o Hóspede:</Form.Label>
+                <Form.Label>Selecione o Cadidato:</Form.Label>
                 <CaixaSelecao
                   enderecoFonteDados={urlBase + "/hospede"}
                   campoChave={"codigo"}
@@ -182,7 +182,7 @@ export default function FormTelefone(props) {
                   id="telefone"
                   required
                 />
-                <Form.Control.Feedback type='invalid'>Selecione o Hóspede</Form.Control.Feedback>
+                <Form.Control.Feedback type='invalid'>Selecione o Candidato</Form.Control.Feedback>
               </Form.Group>
             </Col>
 

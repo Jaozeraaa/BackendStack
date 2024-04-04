@@ -325,7 +325,7 @@ export default function FormHospede(props) {
           onSubmit={manipulaSubmissao}
           className="mainForm"
         >
-          <h1 className="text-center TituloTabela">Cadastro de Hospede</h1>
+          <h1 className="text-center TituloTabela">Cadastro de Cadidatos</h1>
           <Row>
             <Col md={2}>
               <Form.Group>
@@ -343,7 +343,7 @@ export default function FormHospede(props) {
               </Form.Group>
             </Col>
             <Form.Group className="mb-3" controlId="FormTipo">
-              <Form.Label>Categoria</Form.Label>
+              <Form.Label>Cadidato</Form.Label>
               <Form.Select
                 value={pessoa.tipo}
                 required
@@ -353,7 +353,6 @@ export default function FormHospede(props) {
               >
                 <option value={setValidado}>Selecione uma das opções</option>
                 <option value="pessoa fisica">pessoa fisica</option>
-                <option value="pessoa juridica">pessoa juridica</option>
               </Form.Select>
               <Form.Control.Feedback type="invalid">
                 Selecione uma categoria
@@ -409,30 +408,6 @@ export default function FormHospede(props) {
                 <hr></hr>
               </div>
             )}
-
-            {tipoPessoa === "pessoa juridica" && (
-              <Form.Group controlId="formCNPJ">
-                <Form.Label>CNPJ</Form.Label>
-                <Form.Control
-                  type="text"
-                  id="cnpj"
-                  value={pessoa.cnpj}
-                  autocomplete="off"
-                  onChange={manipularMudanca}
-                  required
-                  className={`form-control ${cnpjValido ? '' : 'is-invalid'}`}
-                  placeholder="Digite o CNPJ"
-                  ref={cnpjRef}
-                  maxLength={15}
-                />
-                <Form.Control.Feedback type="invalid">
-                  Digite um cnpj valido!
-                </Form.Control.Feedback>
-                <hr />
-              </Form.Group>
-
-            )
-            }
 
             <Col>
               <Form.Group className="mb-3" controlId="FormNome">

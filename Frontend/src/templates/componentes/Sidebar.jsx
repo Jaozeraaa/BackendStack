@@ -4,13 +4,13 @@ import './sidebar.scss';
 
 const sidebarNavItems = [
     {
-        display: 'Home',
+        display: 'Inicio',
         icon: <i className='bx bx-home'></i>,
         to: '/',
         section: 'started'
     },
     {
-        display: 'Hospede',
+        display: 'Candidato',
         icon: <i className='bx bx-user'></i>,
         to: '/hospede',
         section: 'hospede'
@@ -20,6 +20,13 @@ const sidebarNavItems = [
         icon: <i className='bx bx-user'></i>,
         to: '/telefone',
         section: 'telefone'
+    },
+
+    {
+        display: 'Vagas',
+        icon: <i className='bx bx-user'></i>,
+        to: '/vagas',
+        section: 'vagas'
     }
 ]
 
@@ -47,7 +54,7 @@ const Sidebar = () => {
 
     return <div className='sidebar'>
         <div className="sidebar__logo">
-            Deluxe Hotel
+            Empregos ON
         </div>
         <div ref={sidebarRef} className="sidebar__menu">
             <div
