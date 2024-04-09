@@ -15,12 +15,17 @@ export default function FormHospede(props) {
   const Swal = require('sweetalert2')
   const [cpfValido, setCpfValido] = useState(true);
   const [cnpjValido, setCnpjValido] = useState(true);
+  const [vagaValido, setVagaValido] = useState(true);
   const [telefones, setTelefones] = useState([
     { ddd: '', numero: '' },
   ]);
 
   const adicionarTelefone = () => {
     setTelefones([...telefones, { ddd: '', numero: '' }]);
+  };
+
+  const adicionarVaga = () => {
+    setVagas([...vagas, { vaga: '' }]);
   };
 
   const manipularMudancaTelefone = (valor, index, campo) => {
