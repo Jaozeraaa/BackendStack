@@ -34,12 +34,6 @@ export default function FormHospede(props) {
     setTelefones(novosTelefones);
   };
 
-  const manipularMudancaVaga = (valor, index, campo) => {
-    const novosVagas= [...vaga];
-    novosVagas[index][campo] = valor;
-    setTelefones(novosVagas);
-  };
-
 
 
   const formatCpf = (value) => {
@@ -483,7 +477,7 @@ export default function FormHospede(props) {
                         required
                         placeholder="Informe a vaga que tem interesse"
                         value={vaga.numero}
-                        onChange={(e) => manipularMudancaVaga(e.target.value, index, 'vaga')}
+                        onChange={(e) => manipularMudancaTelefone(e.target.value, index, 'telefone')}
                         maxLength={9}
                       />
                     </InputGroup>
