@@ -15,7 +15,7 @@ export default function FormHospede(props) {
   const Swal = require('sweetalert2')
   const [cpfValido, setCpfValido] = useState(true);
   const [cnpjValido, setCnpjValido] = useState(true);
-  const [vagaValido, setVagaValido] = useState(true);
+  const [vaga, setVagas] = useState(true);
   const [telefones, setTelefones] = useState([
     { ddd: '', numero: '' },
   ]);
@@ -25,7 +25,7 @@ export default function FormHospede(props) {
   };
 
   const adicionarVaga = () => {
-    setVagas([...vagas, { vaga: '' }]);
+    setVagas([...vaga, { vaga: '' }]);
   };
 
   const manipularMudancaTelefone = (valor, index, campo) => {
@@ -495,6 +495,9 @@ export default function FormHospede(props) {
                 ))}
                 <Button variant="secondary" onClick={adicionarTelefone}>
                   Adicionar Telefone
+                </Button>
+                <Button variant="secondary" onClick={adicionarVaga}>
+                  Adicionar Vaga
                 </Button>
               </Form.Group>
             </Col>
