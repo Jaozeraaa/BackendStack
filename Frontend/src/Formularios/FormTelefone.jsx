@@ -10,7 +10,6 @@ export default function FormTelefone(props) {
   const [hospede, setHospede] = useState(props.hospede);
 
   const [telefone, setTelefone] = useState({
-    ddd: '',
     numero: '',
     hospede: {
       codigo: 0,
@@ -53,7 +52,6 @@ export default function FormTelefone(props) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          ddd: telefone.ddd,
           numero: telefone.numero,
           hospede: {
             codigo: hospedeSelecionado.codigo,
@@ -134,26 +132,12 @@ export default function FormTelefone(props) {
               </Form.Group>
             </Col>
             <Col>
-              <Form.Group className="mb-3" controlId="FormTelefone">
-                <Form.Label>DDD</Form.Label>
+              <Form.Group className="mb-3" controlId="FormVaga">
+                <Form.Label>Vagas</Form.Label>
                 <Form.Control
                   type="text"
                   required
-                  id="ddd"
-                  placeholder="Digite o DDD"
-                  value={telefone.ddd}
-                  onChange={(e) =>
-                    setTelefone({ ...telefone, ddd: e.target.value })
-                  }
-                  maxLength={2}
-                />
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="FormTelefoneNumero">
-                <Form.Label>Telefone</Form.Label>
-                <Form.Control
-                  type="text"
-                  required
-                  placeholder="00000-0000"
+                  placeholder="Informe a vaga"
                   onChange={(e) =>
                     setTelefone({
                       ...telefone,
@@ -164,7 +148,7 @@ export default function FormTelefone(props) {
                   maxLength={11}
                 />
                 <Form.Control.Feedback type="invalid">
-                  Digite um telefone válido!
+                  Digite uma vaga Valida!
                 </Form.Control.Feedback>
 
               </Form.Group>

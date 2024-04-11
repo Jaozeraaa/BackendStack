@@ -53,8 +53,7 @@ export default function TabelaTelefone(props) {
           <thead className="colorwhite">
             <tr className="fontLetra">
               <th>Codigo</th>
-              <th>DDD</th>
-              <th>Telefone</th>
+              <th>Vaga</th>
               <th>Nome</th>
               <th>Ações</th>
             </tr>

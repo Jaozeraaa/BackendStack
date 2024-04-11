@@ -68,8 +68,8 @@ export default function TabelaHospede(props) {
               <th>Endereco</th>
               <th>E-mail</th>
               <th>Tipo</th>
-              <th>Telefone</th>
-              <th> CPF/CNPJ</th>
+              <th>Vaga</th>
+              <th> CPF</th>
               <th>Ações</th>
             </tr>
           </thead>

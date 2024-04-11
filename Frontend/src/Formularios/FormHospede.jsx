@@ -34,6 +34,13 @@ export default function FormHospede(props) {
     setTelefones(novosTelefones);
   };
 
+  const manipularMudancaVaga = (valor, index, campo) => {
+    const novosVagas= [...vaga];
+    novosVagas[index][campo] = valor;
+    setTelefones(novosVagas);
+  };
+
+
 
   const formatCpf = (value) => {
     const formattedValue = value
@@ -466,37 +473,26 @@ export default function FormHospede(props) {
             </Col>
 
             <Col>
-              <Form.Group className="mb-3" controlId="FormTelefone">
-                <Form.Label>Telefones</Form.Label>
-                {telefones.map((telefone, index) => (
+              <Form.Group className="mb-3" controlId="FormVaga">
+                <Form.Label>Vagas</Form.Label>
+                {telefones.map((vaga, index) => (
                   <div key={index}>
                     <InputGroup className="mb-3">
                       <FormControl
                         type="text"
                         required
-                        placeholder="DDD"
-                        value={telefone.ddd}
-                        onChange={(e) => manipularMudancaTelefone(e.target.value, index, 'ddd')}
-                        maxLength={2}
-                      />
-                      <FormControl
-                        type="text"
-                        required
-                        placeholder="Número"
-                        value={telefone.numero}
-                        onChange={(e) => manipularMudancaTelefone(e.target.value, index, 'numero')}
+                        placeholder="Informe a vaga que tem interesse"
+                        value={vaga.numero}
+                        onChange={(e) => manipularMudancaVaga(e.target.value, index, 'vaga')}
                         maxLength={9}
                       />
                     </InputGroup>
                     <Form.Control.Feedback type="invalid">
-                      Digite um telefone válido!
+                      Digite uma vaga válida!
                     </Form.Control.Feedback>
                   </div>
                 ))}
                 <Button variant="secondary" onClick={adicionarTelefone}>
-                  Adicionar Telefone
-                </Button>
-                <Button variant="secondary" onClick={adicionarVaga}>
                   Adicionar Vaga
                 </Button>
               </Form.Group>
