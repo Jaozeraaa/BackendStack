@@ -114,7 +114,7 @@ export default function FormTelefone(props) {
           onSubmit={manipulaSubmissao}
           className="mainForm"
         >
-          <h1 className="text-center TituloTabela">Cadastro de Numero</h1>
+          <h1 className="text-center TituloTabela">Cadastro de vagas</h1>
           <Row>
             <Col md={2}>
               <Form.Group>

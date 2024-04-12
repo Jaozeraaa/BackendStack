@@ -15,7 +15,6 @@ export default function FormHospede(props) {
   const Swal = require('sweetalert2')
   const [cpfValido, setCpfValido] = useState(true);
   const [cnpjValido, setCnpjValido] = useState(true);
-  const [vaga, setVagas] = useState(true);
   const [telefones, setTelefones] = useState([
     { ddd: '', numero: '' },
   ]);
@@ -24,16 +23,11 @@ export default function FormHospede(props) {
     setTelefones([...telefones, { ddd: '', numero: '' }]);
   };
 
-  const adicionarVaga = () => {
-    setVagas([...vaga, { vaga: '' }]);
-  };
-
   const manipularMudancaTelefone = (valor, index, campo) => {
     const novosTelefones = [...telefones];
     novosTelefones[index][campo] = valor;
     setTelefones(novosTelefones);
   };
-
 
 
   const formatCpf = (value) => {
@@ -331,7 +325,7 @@ export default function FormHospede(props) {
           onSubmit={manipulaSubmissao}
           className="mainForm"
         >
-          <h1 className="text-center TituloTabela">Cadastro de Cadidatos</h1>
+          <h1 className="text-center TituloTabela">Cadastro de Candidato</h1>
           <Row>
             <Col md={2}>
               <Form.Group>
@@ -349,7 +343,7 @@ export default function FormHospede(props) {
               </Form.Group>
             </Col>
             <Form.Group className="mb-3" controlId="FormTipo">
-              <Form.Label>Cadidato</Form.Label>
+              <Form.Label>Categoria</Form.Label>
               <Form.Select
                 value={pessoa.tipo}
                 required
@@ -414,6 +408,7 @@ export default function FormHospede(props) {
                 <hr></hr>
               </div>
             )}
+            
 
             <Col>
               <Form.Group className="mb-3" controlId="FormNome">
@@ -467,27 +462,27 @@ export default function FormHospede(props) {
             </Col>
 
             <Col>
-              <Form.Group className="mb-3" controlId="FormVaga">
-                <Form.Label>Vagas</Form.Label>
-                {telefones.map((vaga, index) => (
+              <Form.Group className="mb-3" controlId="FormTelefone">
+                <Form.Label>Vagas interessadas</Form.Label>
+                {telefones.map((telefone, index) => (
                   <div key={index}>
                     <InputGroup className="mb-3">
                       <FormControl
                         type="text"
                         required
-                        placeholder="Informe a vaga que tem interesse"
-                        value={vaga.numero}
-                        onChange={(e) => manipularMudancaTelefone(e.target.value, index, 'telefone')}
-                        maxLength={9}
+                        placeholder="Informe um interesse"
+                        value={telefone.numero}
+                        onChange={(e) => manipularMudancaTelefone(e.target.value, index, 'numero')}
+                        maxLength={50}
                       />
                     </InputGroup>
                     <Form.Control.Feedback type="invalid">
-                      Digite uma vaga válida!
+                      Digite um interesse válido!
                     </Form.Control.Feedback>
                   </div>
                 ))}
                 <Button variant="secondary" onClick={adicionarTelefone}>
-                  Adicionar Vaga
+                  Adicionar vaga
                 </Button>
               </Form.Group>
             </Col>
